@@ -27,7 +27,7 @@ app.get('/', (req, res) => {
 });
 
 // 處理 API 請求
-app.post('/api/login', (req, res) => {
+app.post('/api/data', (req, res) => {
   // 在這裡實現您的 API 邏輯
   const data = { message: 'Hello from the server!' };
   res.json(data);

@@ -10,7 +10,7 @@ angular.module('myApp', [])
             const account_input = document.getElementById('account').value;
             const password_input = document.getElementById('password').value;
 
-            fetch('https://my-web-page-code.onrender.com/api/login', {
+            fetch('https://my-web-page-code.onrender.com/api/data', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json'},
                 body: JSON.stringify({account_input, password_input })
