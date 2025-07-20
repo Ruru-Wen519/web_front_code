@@ -155,6 +155,7 @@ a{
 /* 次要的按鈕 */
 .btn.btn-secondary{
 	border: 1px solid #314eaa;
+	background-color: #aaafc0;
 	color: #314eaa;
 }
 .btn.btn-secondary:hover{
@@ -198,4 +199,13 @@ a{
 	content: '';
 	display: block;
 	clear: both;
+}
+
+
+/*眼睛*/
+#checkEye {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(50%);
 }

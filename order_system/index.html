@@ -1,13 +1,24 @@
 <!DOCTYPE html>
 <html lang="zh-TW" ng-app="myApp">
 
-<head> 
+<head>
 	<meta charset="UTF-8">
 	<title>訂購系統 Order System</title>
 	<meta name="viewport" content="width=device-width,initial-scale=1.0">
 	<link rel="stylesheet" href="css/normalize.css">
 	<link rel="icon" type="image/x-icon" href="https://ruru-wen519.github.io/favicon.ico">
+	<!-- AngularJS 與 Angular Material 相關庫 -->
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-animate.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-aria.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-messages.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.12/angular-material.min.js"></script>
+	<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.2.2/angular-material.min.css"> -->
+	<!-- icon ==S== -->
+	<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/css/bootstrap.min.css" />
+	<!-- icon ==E== -->
+	<link rel="stylesheet" href="css/angular-material.min.css">
 	<link rel="stylesheet" href="css/index.css">
 	<script src="order_system.js"></script>
 </head>
@@ -23,21 +34,26 @@
 				<div class="account_info">
 					<div class="account_area">
 						<div class="account_name">帳號：</div>
-						<input class="account_input"id="account"></input>
+						<input class="account_input" id="account" ng-change="filterInput(account_input,'0')"
+							placeholder="請輸入帳號" ng-model="account_input"></input>
 					</div>
 				</div>
 				<div class="account_info">
 					<div class="password_area">
 						<div class="password_name">密碼：</div>
-						<input class="password_input" id="password" ></input>
+						<!-- <input class="password_input" id="password" type="password"></input> -->
+						<input class="password_input" id="floatingPassword" type="password"
+							ng-change="filterInput(password_input,'1')" placeholder="請輸入密碼"
+							ng-model="password_input"></input>
+						<i id="checkEye" class="fas fa-eye-slash" ng-click="eye_change(this,$event)"></i>
 					</div>
 				</div>
 
 				<div class="account_info">
 					<div class="button_area">
 						<div class="btn-group-center">
-							<button class="btn btn-primary btn-lg" ng-click="login(account_input,password_input)">登入</button>
-							<button class="btn btn-secondary btn-lg" ng-click="sayHello()">註冊</button>
+							<button class="btn btn-primary btn-lg" ng-click="login()">登入</button>
+							<button class="btn btn-secondary btn-lg" ng-click="register($event)">註冊</button>
 						</div>
 					</div>
 				</div>

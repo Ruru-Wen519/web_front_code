@@ -1,0 +1,15 @@
+.reg_container {
+	display: flex;
+	/* 水平置中 */
+	justify-content: center;
+	/* 垂直置中 */
+	align-items: center;
+}
+
+.reg_account_info {
+	display: inline-block;
+}
+
+.reg_info {
+	padding-top: 32px;
+}
