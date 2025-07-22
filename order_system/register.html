@@ -1,11 +1,11 @@
 <link rel="stylesheet" href="css/register.css">
-<md-dialog aria-label="註冊" style="min-width: 50%;min-height: 50%;">
+<md-dialog aria-label="註冊" style="min-width: 40%;min-height: 40%;" ng-controller="DialogController as ctrl">
 	<form>
 		<md-toolbar>
 			<div class="md-toolbar-tools">
 				<h2>註冊</h2>
 				<span flex></span>
-				<md-button class="md-icon-button" ng-click="closeDialog()">
+				<md-button class="md-icon-button" ng-click="ctrl.closeDialog()" aria-label="Register">
 					<i class="fas fa-times"></i>
 				</md-button>
 			</div>
@@ -14,24 +14,29 @@
 			<div class="reg_container">
 				<div class="reg_info">
 					<div class="reg_account_info">帳號：</div>
-					<input class="reg_account_input" id="reg_account" ng-change="filterInput(account_input,'0')"
-						placeholder="請輸入帳號" ng-model="reg_account_input"></input>
+					<input class="reg_account_input" id="reg_account" ng-change="ctrl.filterInput(ctrl.reg_account_input,'0')"
+						placeholder="請輸入帳號" ng-model="ctrl.reg_account_input"></input>
 				</div>
 
 			</div>
 			<div class="reg_container">
 				<div class="reg_info">
 					<div class="reg_account_info">暱稱：</div>
-					<input class="reg_name_input" id="reg_name" placeholder="請輸入暱稱" ng-model="reg_name_input"></input>
+					<input class="reg_name_input" id="reg_name" placeholder="請輸入暱稱" ng-model="ctrl.reg_name_input"></input>
 				</div>
 			</div>
 			<div class="reg_container">
 				<div class="reg_info">
 					<div class="reg_account_info">密碼：</div>
 					<input class="reg_password_input" id="reg_floatingPassword" type="password"
-						ng-change="filterInput(reg_password_input,'1')" placeholder="請輸入密碼"
-						ng-model="reg_password_input"></input>
-					<i id="checkEye" class="fas fa-eye-slash" ng-click="eye_change(this,$event)"></i>
+						ng-change="ctrl.filterInput(ctrl.reg_password_input,'1')" placeholder="請輸入密碼"
+						ng-model="ctrl.reg_password_input"></input>
+					<i id="checkEye" class="fas fa-eye-slash" ng-click="ctrl.eye_change(this,$event)"></i>
+				</div>
+			</div>
+			<div class="reg_container">
+				<div class="button_area">
+					<button class="btn btn-primary btn-lg" ng-click="ctrl.do_register()" aria-label="Register">確定</button>
 				</div>
 			</div>
 
